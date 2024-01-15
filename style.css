@@ -1,0 +1,737 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+@font-face {
+    font-family: 'Inter 400';
+    src: url("fonts/Inter-Regular.ttf");
+}
+@font-face {
+    font-family: 'Inter 600';
+    src: url("fonts/Inter-SemiBold.ttf");
+}
+body {
+    background-color: rgba(225, 212, 201, 1);
+    overflow-x: hidden;
+}
+.hidden {
+    overflow: hidden;
+}
+.parent {
+    display: none;
+}
+.block {
+    display: block;
+}
+.burger__menu {
+    left: 100%;
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(225, 212, 201, 1);
+    z-index: 10;
+    text-align: center;
+    padding-top: 160px;
+    transition: .5s;
+}
+.open {
+    left: 0;
+    transition: .5s;
+}
+.burger__menu li {
+    padding-bottom: 60px;
+}
+.burger__menu li a {
+    font-family: 'Inter 600';
+    color: #403F3D;
+    line-height: 40px;
+    font-size: 32px;
+}
+.burger__menu li:last-child {
+    padding-bottom: 100px;
+}
+.burger__menu_menu p {
+    font-family: 'Inter 600';
+    color: #403F3D;
+    line-height: 40px;
+    font-size: 32px;
+}
+.burger__menu_menu {
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+}
+.logo, .menu {
+    z-index: 11;
+}
+
+.header {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+.logo img {
+    width: 100px;
+}
+nav ol {
+    display: flex;
+    font-family: "Inter 600";
+    column-gap: 40px;
+}
+nav ol li {
+    margin-top: -6px;
+}
+nav ol li a {
+    color: rgba(64, 63, 61, 1);
+}
+.link {
+    position: relative;
+}
+.link::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgba(64, 63, 61, 1);
+    transition: 0.3s;
+}
+.link:hover:after {
+    width: 100%;
+}
+.menu img {
+    margin-top: -5px;
+}
+.menu a {
+    display: flex;
+    font-family: "Inter 600";
+    column-gap: 8px;
+    margin-top: -6px;
+    color: rgba(64, 63, 61, 1);
+}
+
+.enjoy video {
+    position: absolute;
+    border-radius: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.enjoy {
+    max-width: 1360px;
+    margin: 0 auto;
+    margin-top: 16px;
+    background-position: 0px -30px;
+    background-size: cover;
+    position: relative;
+}
+.enjoy__content div {
+    cursor: pointer;
+}
+.enjoy h1>span {
+    display: inline;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+.enjoy h1 {
+    font-family: "Inter 600";
+    color: rgba(225, 212, 201, 1);
+    font-size: 72px;
+    line-height: 75.6px;
+}
+
+.enjoy__content {
+    max-width: 600px;
+    padding: 100px;
+}
+.enjoy__content>p {
+    max-width: 550px;
+    line-height: 24px;
+    padding: 40px 0;
+    font-size: 16px;
+    font-family: "Inter 400";
+    color: rgba(225, 212, 201, 1);
+    font-weight: 400;
+}
+
+.enjoy .main__btn {
+    padding: 20px 77px;
+    background-color: rgba(225, 212, 201, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.enjoy .main__btn {
+    display: inline-block;
+    line-height: 24px;
+    letter-spacing: 1px;
+    font-family: "Inter 600";
+    font-size: 16px;
+    transition: .5s;
+    color: rgba(64, 63, 61, 1);
+}
+.enjoy .main__btn span {
+    transition: .5s;
+}
+.enjoy .main__btn:hover span {
+    margin-left: -15px;
+    margin-right: 15px;
+    transition: .5s;
+}
+.enjoy .main__btn:hover img {
+    opacity: 1;
+    transition: .3s;
+}
+.enjoy .main__btn img {
+    padding-top: 3px;
+    transition: .3s;
+    position: absolute;
+    opacity: 0;
+}
+
+
+.favourites__coffee h2>span {
+    display: inline;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+.favourites__coffee h2 {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 60px;
+    font-family: "Inter 600";
+    color: rgba(64, 63, 61, 1);
+}
+.carousel>svg {
+    cursor: pointer;
+}
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.carousel > img {
+    margin-top: 40px;
+    margin-right: 4px;
+}
+.arrow {
+    padding: 17px;
+    border: 1px solid rgba(102, 95, 85, 1);
+    border-radius: 100px;
+    transition: .3s;
+    margin-top: 43px;
+}
+.arrow:hover path {
+    stroke: rgba(225, 212, 201, 1) !important;
+}
+.arrow:hover {
+    background-color: rgba(102, 95, 85, 1);
+    transition: .3s;
+}
+.cards {
+    width: 477px;
+    overflow: hidden;
+}
+.line {
+    transition: .5s;
+    display: flex;
+}
+.card {
+    width: 480px;
+    margin-top: 40px;
+    text-align: center;
+    margin-left: -3px;
+}
+.card h3 {
+    font-family: "Inter 600";
+    font-size: 24px;
+    color: rgba(64, 63, 61, 1);
+    margin-top: 17px;
+    line-height: 30px;
+}
+.card p {
+    font-family: "Inter 400";
+    font-size: 16px;
+    color: rgba(64, 63, 61, 1);
+    margin: 16px 0;
+    line-height: 24px;
+}
+.navigation{
+    margin-top: 40px;
+    display: flex;
+    column-gap: 12px;
+    margin-bottom: 100px;
+    justify-content: center;
+}
+.nav__btn {
+    width: 40px;
+    height: 4px;
+    background-color: rgba(193, 182, 173, 1);
+    border-radius: 15px;
+    cursor: pointer;
+}
+.current {
+    background-color: rgba(102, 95, 85, 1);
+    height: 4px;
+    border-radius: 15px;
+    animation: cur 5s;
+}
+@keyframes cur {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 40px;
+    }
+}
+
+.about {
+    margin-bottom: 100px;
+}
+.about h2>span {
+    display: inline;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+.about h2 {
+    font-family: "Inter 600";
+    font-size: 60px;
+    color: rgba(64, 63, 61, 1);
+    margin-bottom: 40px;
+    line-height: 75px;
+}
+
+.gal {
+    display: grid;
+    grid-template-columns: 660px 660px;
+    column-gap: 40px;
+}
+.gal_img {
+    transition: .7s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110%;
+    border-radius: 20px;
+}
+.gal_img:hover {
+    transition: .7s;
+    background-size: 100%;
+}
+.col1 {
+    display: grid;
+    grid-template-rows: 590px 430px;
+    row-gap: 40px;
+}
+.col2 {
+    display: grid;
+    grid-template-rows: 430px 590px;
+    row-gap: 40px;
+}
+
+.mobile__app {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.app__content {
+    width: 630px;
+}
+.app__content>p {
+    color: rgba(64, 63, 61, 1);
+    font-size: 16px;
+    font-family: "Inter 400";
+    margin: 40px 0;
+    line-height: 24px;
+}
+.app__content h2>span {
+    display: inline;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+.app__content h2 {
+    color: rgba(64, 63, 61, 1);
+    font-size: 60px;
+    font-family: "Inter 600";
+    line-height: 75px;
+    margin-top: -7px;
+}
+.app__btn svg {
+    margin-left: -5px;
+}
+.app__btn {
+    cursor: pointer;
+    column-gap: 8px;
+    background-color: rgba(225, 212, 201, 1);
+    padding: 12px 25px;
+    display: flex;
+    border: 1px solid rgba(102, 95, 85, 1);
+    border-radius: 100px;
+    width: 150px;
+}
+.app__btn, .app__btn:hover svg path, .app__btn:hover, .app__btn:hover p, .app__btn:hover h3 {
+    transition: .7s;
+}
+.app__btn:hover svg path {
+    fill: rgba(225, 212, 201, 1);
+}
+.app__btn:hover {
+    background-color: rgba(102, 95, 85, 1);
+}
+.app__btn:hover p, .app__btn:hover h3 {
+    color: rgba(225, 212, 201, 1);
+}
+.btn__text p {
+    font-family: "Inter 600";
+    font-size: 10px;
+    line-height: 14px;
+}
+.btn__text h3 {
+    font-family: "Inter 600";
+    font-size: 16px;
+    line-height: 24px;
+}
+.app__btns {
+    display: flex;
+    column-gap: 20px;
+}
+footer {
+    background-color: rgba(102, 95, 85, 1);
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px !important;
+    margin-top: 100px !important;
+    column-gap: 100px;
+}
+.footer__contact h3 {
+    font-family: "Inter 600";
+    font-size: 24px;
+    color: rgba(225, 212, 201, 1);
+    padding-bottom: 40px;
+}
+.info, .info a {
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+}
+.info p {
+    font-family: "Inter 600";
+    font-size: 16px;
+    color: rgba(225, 212, 201, 1);
+}
+.footer__content {
+    padding: 100px;
+    padding-right: 0;
+}
+
+.info:nth-child(3) {
+    padding: 15px 0;
+}
+.footer__contact {
+    margin-top: 131px;
+}
+.footer__content h2>span {
+    display: inline;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+.footer__content h2 {
+    color: rgba(225, 212, 201, 1);
+    font-family: "Inter 600";
+    font-size: 60px;
+    padding-bottom: 40px;
+}
+.social svg:hover path{
+    transition: .4s;
+    stroke: rgba(102, 95, 85, 1);
+}
+.social svg:hover {
+    transition: .4s;
+    background-color: rgba(225, 212, 201, 1);
+}
+.social svg {
+    transition: .4s;
+    border: 1px solid rgba(225, 212, 201, 1);
+    border-radius: 100px;
+    padding: 17px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+.social {
+    column-gap: 12px;
+    display: flex;
+}
+.info img {
+    padding-right: 8px;
+}
+.link1 {
+    position: relative;
+}
+.link1::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -8px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgba(225, 212, 201, 1);
+    transition: 0.6s;
+}
+.link1:hover:after {
+    width: 100%;
+}
+.burger__line:last-child {
+    margin-top: 6px;
+}
+.burger-icon {
+    margin-top: -5px;
+    border: 1px solid #665F55;
+    border-radius: 50px;
+    padding: 18px 14px;
+    display: none;
+}
+.burger__line {
+    background-color: #403F3D;
+    width: 16px;
+    height: 1px;
+    border-radius: 15px;
+    transition: .5s;
+}
+.line_one {
+    transform: rotate(45deg) translate(3px, 2px);
+    transition: .5s;
+}
+.line_two {
+    transform: rotate(-45deg) translate(3px, -2px);
+    transition: .5s;
+}
+@media screen and (max-width: 1439px) {
+    .col1>div:nth-child(2), .col2>div:nth-child(1) {
+        display: none;
+    }
+    .gal {
+        display: flex;
+        flex-direction: column;
+    }
+    .col1, .col2 {
+        justify-content: center;
+        grid-template-rows: 1fr;
+    }
+    .gal div div {
+        width: 688px;
+        height: 590px;
+    }
+    .container {
+        margin: 0 40px;
+    }
+    .enjoy {
+        margin: 16px 40px 0 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .enjoy__content {
+        padding: 100px 60px;
+    }
+    .card h3 {
+        margin-top: 21px;
+    }
+    .card h3:last-child {
+        margin-top: 0px;
+    }
+    .enjoy .main__btn {
+        padding: 20px 85px 20px 77px;
+    }
+    .gal_img {
+        background-size: 106%;
+    }
+    .col2 {
+        margin-top: 40px;
+    }
+    .about h2 {
+        margin-bottom: 38px;
+    }
+    .about {
+        margin-bottom: 107px;
+    }
+    .mobile__app {
+        display: block;
+    }
+    .app__content {
+        width: auto;
+        margin-bottom: 100px;
+    }
+    .mobile__app>div {
+        text-align: left;
+    }
+    .mobile__app {
+        text-align: center;
+    }
+    footer {
+        display: block;
+        margin-top: 96px !important;
+    }
+    .footer__content {
+        padding: 100px 60px;
+    }
+    .footer__contact {
+        margin-top: 0;
+        padding: 0px 60px 105px 60px;
+    }
+}
+@media (hover: none) {
+    .enjoy .main__btn img {
+        opacity: 1;
+    }
+    .enjoy .main__btn span {
+        margin-left: -14px;
+        margin-right: 5px;
+    }
+    .arrow:hover path {
+        stroke: #403F3D !important;
+    }
+    .arrow:hover {
+        background-color: #e1d4c9;
+    }
+    .enjoy .main__btn:hover span {
+        margin-left: -14px;
+        margin-right: 5px;
+    }
+    .link1:hover:after {
+        width: 0;
+    }
+    .social svg:hover path{
+        stroke: rgba(225, 212, 201, 1);
+    }
+    .social svg:hover {
+        background-color: #665f55;
+    }
+    .app__btn:hover svg path {
+        fill: #403f3d;
+    }
+    .app__btn:hover {
+        background-color: rgba(225, 212, 201, 1);
+    }
+    .app__btn:hover p, .app__btn:hover h3 {
+        color: rgba(102, 95, 85, 1);
+    }
+    .gal_img:hover {
+        background-size: 106%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .burger-icon {
+        display: block;
+    }
+    nav {
+        display: none;
+    }
+    .menu a {
+        display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .cards {
+        width: 345px;
+    }
+    .carousel {
+        justify-content: center;
+    }
+    .gal_img:hover {
+        background-size: auto;
+    }
+    .container {
+        margin: 0 16px;
+    }
+    .enjoy {
+        margin: 16px 16px 0 16px;
+    }
+    .favourites__coffee h2 {
+        font-size: 32px;
+    }
+    .card {
+        width: 348px;
+        padding-left: 3px;
+    }
+    .card h3 {
+        margin-top: 17px;
+    }
+    .card img {
+        width: 348px;
+    }
+    .about h2 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .about {
+        margin-bottom: 110px;
+    }
+    .app__content h2 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .app__btns {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .app__content {
+        margin-bottom: 40px;
+    }
+    .gal div div {
+        width: 348px;
+        height: 590px;
+    }
+    .gal_img {
+        background-size: auto;
+    }
+    .mobile__app>img {
+        width: 348px;
+        height: 348px;
+    }
+    .carousel>svg {
+        display: none;
+    }
+    .enjoy h1 {
+        font-size: 42px;
+        line-height: 48.3px;
+    }
+    .enjoy__content {
+        padding: 60px 16px;
+    }
+    .footer__content h2 {
+        font-size: 32px;
+        line-height: 40px;
+        padding-bottom: 37px;
+    }
+    .footer__content {
+        padding: 60px 16px 40px 16px;
+    }
+    .footer__contact {
+        padding: 0 16px 65px 16px;
+    }
+}
